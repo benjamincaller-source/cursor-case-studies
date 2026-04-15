@@ -1,0 +1,556 @@
+[
+  {
+    "company": "NVIDIA",
+    "published_date": "2026-02-06",
+    "url": "https://www.cursor.com/blog/nvidia",
+    "source_type": "Official Case Study",
+    "industry": "Semiconductors / AI Hardware",
+    "company_size": "30,000+ engineers",
+    "primary_use_cases": ["Code Generation", "Code Review", "Testing", "Debugging", "SDLC Automation"],
+    "key_metric": "3x more committed code across 30,000 developers",
+    "spokesperson": "Wei Luo, VP of Engineering; Fabian Theuring, Senior Software Architect",
+    "summary": "NVIDIA embedded Cursor across every phase of its SDLC for 30,000+ daily users, driving a 3x increase in committed code while maintaining flat bug rates. Teams automated entire workflows including git flow, CI debugging, and bug fixes using custom rules and MCP servers.",
+    "tags": ["Enterprise", "Agents", "Rules", "SDLC Automation", "Onboarding", "Debugging"],
+    "key_quotes": [
+      {
+        "text": "Cursor is used in pretty much all product areas and in all aspects of software development.",
+        "author": "Wei Luo",
+        "title": "VP of Engineering, NVIDIA"
+      },
+      {
+        "text": "We have built a lot of custom rules in Cursor to fully automate entire workflows. That has unlocked Cursor's true potential.",
+        "author": "Fabian Theuring",
+        "title": "Senior Software Architect, NVIDIA"
+      }
+    ]
+  },
+  {
+    "company": "Salesforce",
+    "published_date": "2026-01-21",
+    "url": "https://www.cursor.com/blog/salesforce",
+    "source_type": "Official Case Study",
+    "industry": "Enterprise Software / CRM",
+    "company_size": "Thousands of engineers",
+    "primary_use_cases": ["Code Generation", "Testing", "Legacy Code Coverage"],
+    "key_metric": "30%+ velocity acceleration with double-digit gains in quality",
+    "spokesperson": "Shan Appajodu, SVP of Engineering",
+    "summary": "Salesforce saw double-digit gains in cycle time, quality (bug count), and throughput after adopting Cursor across thousands of engineers. One team reduced legacy code coverage time by 85%. Junior engineers used Cursor to onboard faster during remote work, while senior engineers started with tedious tasks and quickly expanded to higher-value use cases.",
+    "tags": ["Enterprise", "Onboarding", "Testing", "Legacy Code", "Quality"],
+    "key_quotes": [
+      {
+        "text": "It's 0 to 1 in terms of how Cursor has transformed the way our developers use tools to improve quality of the product.",
+        "author": "Shan Appajodu",
+        "title": "SVP of Engineering, Salesforce"
+      },
+      {
+        "text": "We have seen more than double-digit increases in all of these metrics.",
+        "author": "Shan Appajodu",
+        "title": "SVP of Engineering, Salesforce"
+      }
+    ]
+  },
+  {
+    "company": "Stripe",
+    "published_date": "2026-02-17",
+    "url": "https://www.cursor.com/blog/stripe",
+    "source_type": "Official Case Study",
+    "industry": "Fintech / Payments",
+    "company_size": "3,000+ engineers",
+    "primary_use_cases": ["Code Generation", "Code Review", "Onboarding"],
+    "key_metric": "Consistent AI rollout across 3,000 engineers with 5-year-high developer sentiment",
+    "spokesperson": "Patrick Collison, Co-Founder & CEO; Scott MacVicar, Head of Developer Infrastructure",
+    "summary": "Stripe rolled out Cursor to 3,000+ engineers by preloading it on every machine, using Cursor Rules for codebase context, and adapting code review for AI-generated code. Longest-tenured engineers saw the biggest gains. Developer sentiment hit a five-year high.",
+    "tags": ["Enterprise", "Rules", "Code Review", "Onboarding", "Developer Experience"],
+    "key_quotes": [
+      {
+        "text": "Cursor quickly grew from hundreds to thousands of extremely enthusiastic Stripe employees.",
+        "author": "Patrick Collison",
+        "title": "Co-Founder & CEO, Stripe"
+      },
+      {
+        "text": "My advice for anyone thinking about trying AI coding is, move faster on this.",
+        "author": "Scott MacVicar",
+        "title": "Head of Developer Infrastructure, Stripe"
+      }
+    ]
+  },
+  {
+    "company": "Box",
+    "published_date": "2026-02-13",
+    "url": "https://www.cursor.com/blog/box",
+    "source_type": "Official Case Study",
+    "industry": "Cloud Content Management",
+    "company_size": "800+ developers (85% adoption)",
+    "primary_use_cases": ["Code Generation", "Migrations", "Testing", "SDLC Automation"],
+    "key_metric": "30-50% improvement in roadmap delivery; 80-90% faster migrations",
+    "spokesperson": "Aaron Levie, CEO; Swaroop Butala, Senior Director of Engineering; Mick Ryan, Staff Engineer",
+    "summary": "Box selected Cursor for its enterprise-grade security and data privacy controls. Over 85% of developers use Cursor daily, driving 30-50% more roadmap throughput. A stalled React migration was completed 80% faster than expected, and a design system migration finished 90% faster. Box also built a formal mentorship program that boosted Cursor usage by 75%.",
+    "tags": ["Enterprise", "Security", "Migrations", "Rules", "Mentorship", "Accessibility"],
+    "key_quotes": [
+      {
+        "text": "It became obvious that Cursor is one of the clear leaders to bet on.",
+        "author": "Aaron Levie",
+        "title": "CEO, Box"
+      },
+      {
+        "text": "Before Cursor, this migration would have taken a developer a full quarter. We are now wrapping up the project in about a week.",
+        "author": "Swaroop Butala",
+        "title": "Senior Director of Engineering, Box"
+      }
+    ]
+  },
+  {
+    "company": "Dropbox",
+    "published_date": "2026-01-26",
+    "url": "https://www.cursor.com/blog/dropbox",
+    "source_type": "Official Case Study",
+    "industry": "Cloud Storage / Productivity",
+    "company_size": "Thousands of engineers (90%+ weekly AI usage)",
+    "primary_use_cases": ["Code Generation", "Code Review", "Testing", "Documentation", "Migrations"],
+    "key_metric": "1M+ lines of AI-suggested code accepted monthly; 550K+ files indexed",
+    "spokesperson": "Ali Dasdan, CTO",
+    "summary": "Dropbox engineers accept over one million lines of AI-suggested code monthly. Cursor indexed Dropbox's 550,000+ file monorepo, enabling semantic reasoning across the entire codebase. Over 90% of engineers use AI tools weekly. Adoption grew organically through AI champions and a company-wide hackathon.",
+    "tags": ["Enterprise", "Monorepo", "Indexing", "Organic Adoption", "Hackathon"],
+    "key_quotes": [
+      {
+        "text": "Speed is the only advantage of any company.",
+        "author": "Ali Dasdan",
+        "title": "CTO, Dropbox"
+      },
+      {
+        "text": "I waited until the last minute because I trusted the tool, and it still let me finish the whole thing in about two hours.",
+        "author": "Ali Dasdan",
+        "title": "CTO, Dropbox"
+      }
+    ]
+  },
+  {
+    "company": "PlanetScale",
+    "published_date": "2026-03-02",
+    "url": "https://www.cursor.com/blog/planetscale",
+    "source_type": "Official Case Study",
+    "industry": "Cloud Database Infrastructure",
+    "company_size": "Engineering team (startup scale)",
+    "primary_use_cases": ["Code Review", "Bugbot"],
+    "key_metric": "80% of Bugbot comments addressed before merge; equivalent of 2 FTE saved",
+    "spokesperson": "Fatih Arslan, Software Engineer; Sam Lambert, CEO",
+    "summary": "As coding agents made code generation cheap and fast, code review became PlanetScale's bottleneck. Bugbot now reviews 2,000+ PRs monthly, catching deep semantic bugs that could cause production downtime. Roughly 80% of Bugbot comments are addressed before merge.",
+    "tags": ["Bugbot", "Code Review", "Reliability", "Production Safety", "Startup"],
+    "key_quotes": [
+      {
+        "text": "Bugbot is different from other tools. It detects issues that as a human reviewer I would never imagine to look at. I was blown away.",
+        "author": "Fatih Arslan",
+        "title": "Software Engineer, PlanetScale"
+      },
+      {
+        "text": "If I took Bugbot away from our engineering team, there would be a mutiny.",
+        "author": "Sam Lambert",
+        "title": "CEO, PlanetScale"
+      }
+    ]
+  },
+  {
+    "company": "Money Forward",
+    "published_date": "2026-03-18",
+    "url": "https://www.cursor.com/blog/money-forward",
+    "source_type": "Official Case Study",
+    "industry": "Fintech / Financial Services",
+    "company_size": "1,000+ daily Cursor users",
+    "primary_use_cases": ["Code Generation", "Testing", "QA Automation", "Cross-functional Adoption"],
+    "key_metric": "15-20 hours saved per developer per week; QA test generation 70% faster",
+    "spokesperson": "Aaron Li, Staff Engineer; Tran Ba Vinh Son, Group Company CTO; Xie Lester, Director in Chief Quality Office",
+    "summary": "Money Forward expanded Cursor from engineering to product, design, and QA teams. Over 1,000 employees use Cursor daily. Engineers save 15-20 hours/week, QA generates test cases 70% faster using Jira/Notion MCPs.",
+    "tags": ["Cross-functional", "QA", "Product Management", "Design", "MCP", "Agents"],
+    "key_quotes": [
+      {
+        "text": "We held an engineering all-hands where we showed that Cursor's agents could actually tackle entire software engineering tasks from end-to-end. The bottoms-up demand from developers was immediate.",
+        "author": "Aaron Li",
+        "title": "Staff Engineer, Money Forward"
+      },
+      {
+        "text": "The QA team now uses Cursor to analyze incidents, automate test results, and review specs before development.",
+        "author": "Xie Lester",
+        "title": "Director in the Chief Quality Office, Money Forward"
+      }
+    ]
+  },
+  {
+    "company": "National Australia Bank (NAB)",
+    "published_date": "2026-01-06",
+    "url": "https://news.nab.com.au/tag/artificial-intelligence/the-tools-and-training-transforming-nab-s-workforce-to-become--t",
+    "source_type": "Company Press / News",
+    "industry": "Banking / Financial Services",
+    "company_size": "6,000+ engineers and technologists (using Cursor or Q Developer)",
+    "primary_use_cases": ["Code Generation", "UX Prototyping", "Requirements Generation", "App Development"],
+    "key_metric": "40x leap in generating software requirements; 5-6x uplift in development phases",
+    "spokesperson": "Nicholas Di Giuseppe, Executive for Transformation Engineering; Kimberley Kam, UX Designer; Pete Steel, Group Executive Digital, Data & AI; Patrick Wright, Group Executive Technology",
+    "summary": "NAB saw staggering results from Cursor trials: 40x faster software requirements generation, 5-6x development uplift, push notifications added 5x faster, a referral app prototype built in under 10 minutes, and 6 months of merchant onboarding work completed in 2.5 days. UX designers use Cursor to convert design concepts into clickable prototypes in hours instead of days.",
+    "tags": ["Banking", "UX Design", "Prototyping", "Requirements", "Enterprise", "Australia"],
+    "key_quotes": [
+      {
+        "text": "We've seen staggering improvements so far. A 40x leap in generating software requirements and a 5-6x uplift in development phases.",
+        "author": "Nicholas Di Giuseppe",
+        "title": "Executive for Transformation Engineering, NAB"
+      },
+      {
+        "text": "It's amazing. I'm able to instantly turn a design concept into clickable prototypes, so I can get buy-in and start testing and refining with customers. That's days of work in just hours!",
+        "author": "Kimberley Kam",
+        "title": "UX Designer, NAB"
+      }
+    ]
+  },
+  {
+    "company": "Coinbase",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial + External Coverage",
+    "industry": "Cryptocurrency / Fintech",
+    "company_size": "1,000+ engineers",
+    "primary_use_cases": ["Code Generation", "Code Review", "Onboarding", "Refactoring"],
+    "key_metric": "92% adoption rate; ~40% of code AI-generated; PR review cycle reduced from 150 to 15 hours (10x)",
+    "spokesperson": "Brian Armstrong, CEO; Chintan Turakhia, Senior Director of Engineering",
+    "summary": "By February 2025, every Coinbase engineer had utilized Cursor, which became the preferred IDE. Single engineers now refactor, upgrade, or build new codebases in days instead of months. The famous 'PR speed run' saw 800 engineers submit 400 PRs in 30 minutes. 92% adoption rate with 40% of code now AI-generated.",
+    "tags": ["Enterprise", "Crypto", "Onboarding", "Refactoring", "CEO-led Adoption"],
+    "key_quotes": [
+      {
+        "text": "By February 2025, every Coinbase engineer had utilized Cursor, which has become the preferred IDE for most of our developers. Single engineers are now refactoring, upgrading, or building new codebases in days instead of months.",
+        "author": "Brian Armstrong",
+        "title": "CEO, Coinbase"
+      }
+    ]
+  },
+  {
+    "company": "Brex",
+    "published_date": "2025-11-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial + External Coverage",
+    "industry": "Fintech / Corporate Cards",
+    "company_size": "70%+ engineers using Cursor",
+    "primary_use_cases": ["Code Generation", "Migrations", "Debugging", "Onboarding"],
+    "key_metric": "70%+ engineers using Cursor; 45% of code changes fully AI-written",
+    "spokesperson": "James Reggio, CTO",
+    "summary": "Over 70% of Brex engineers use Cursor, making it the standout tool despite a philosophy of letting engineers choose their own tools. Over 45% of code changes are now fully written by AI. Gains seen in day-to-day development, large-scale migrations, debugging, and onboarding.",
+    "tags": ["Fintech", "Organic Adoption", "Migrations", "Debugging", "Developer Choice"],
+    "key_quotes": [
+      {
+        "text": "More than 70% of our engineers now use Cursor, and we've seen meaningful gains in day-to-day development, faster execution on large-scale migrations, increased rate of debugging, and even faster onboarding.",
+        "author": "James Reggio",
+        "title": "CTO, Brex"
+      }
+    ]
+  },
+  {
+    "company": "Rippling",
+    "published_date": "2025-10-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial + External Coverage",
+    "industry": "HR Tech / Enterprise Software",
+    "company_size": "500+ engineers (~60% of org)",
+    "primary_use_cases": ["Code Generation", "Migrations", "Code Quality", "Onboarding"],
+    "key_metric": "Adoption grew from 150 to 500+ engineers in weeks; clear gains in code quality and velocity",
+    "spokesperson": "Albert Strasheim, CTO",
+    "summary": "Rippling's Cursor adoption started with a single curious engineer nine months ago and grew from 150 to over 500 engineers (~60% of the org) in just a few weeks. The company created SPARK forums where early adopters share workflows. Clear gains in code quality, velocity, and onboarding speed.",
+    "tags": ["Organic Adoption", "HR Tech", "Velocity", "Onboarding", "Community"],
+    "key_quotes": [
+      {
+        "text": "Cursor has transformed the way our engineering teams write and ship code, with adoption growing from 150 to over 500 engineers (~60% of our org!) in just a few weeks.",
+        "author": "Albert Strasheim",
+        "title": "CTO, Rippling"
+      }
+    ]
+  },
+  {
+    "company": "Upwork",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers/upwork",
+    "source_type": "Customer Testimonial",
+    "industry": "Freelance Marketplace / Tech Platform",
+    "company_size": "Nearly 100% engineering adoption",
+    "primary_use_cases": ["Code Generation", "Code Quality"],
+    "key_metric": "25% increase in PR volume; 100% increase in average PR size; ~50% more code shipped",
+    "spokesperson": "Anton Andreev, Principal Software Engineer",
+    "summary": "Upwork achieved nearly 100% Cursor adoption vs. GitHub Copilot's prior 20% adoption rate. 70% of engineers save at least one hour weekly. Combined 25% more PRs at 2x average size equals roughly 50% more code shipped overall.",
+    "tags": ["Near-Total Adoption", "Marketplace", "Velocity", "PR Metrics"],
+    "key_quotes": [
+      {
+        "text": "Across roles and levels, we're seeing an increase of over 25% in PR volume and over 100% in the average PR size. Together, that means we're shipping about 50% more code.",
+        "author": "Anton Andreev",
+        "title": "Principal Software Engineer, Upwork"
+      }
+    ]
+  },
+  {
+    "company": "Sentry",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial + Engineering Blog",
+    "industry": "Developer Tools / Observability",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Code Generation", "Agents", "Cross-language Development"],
+    "key_metric": "Dozen agent branches merging daily; scale-multiplier for the whole org",
+    "spokesperson": "Cody De Arkland, Senior Director",
+    "summary": "At Sentry, watching a dozen agent branches merge every day has become normal. The freed-up velocity shows up in release cadence and bug-backlog burn-down. Engineers use background agents to implement features in unfamiliar languages (e.g., C# parser support with zero prior C# experience).",
+    "tags": ["Developer Tools", "Agents", "Background Agents", "Cross-language"],
+    "key_quotes": [
+      {
+        "text": "Watching a dozen agent branches merge every day has become normal, and that freed-up velocity shows up everywhere from release cadence to bug-backlog burn-down. Cursor isn't a convenience add-on; it's a scale-multiplier for the whole org.",
+        "author": "Cody De Arkland",
+        "title": "Senior Director, Sentry"
+      }
+    ]
+  },
+  {
+    "company": "Datadog",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "Developer Tools / Observability",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Code Generation", "Code Quality"],
+    "key_metric": "Coding agents improve both speed and code quality",
+    "spokesperson": "Alexis Le-Quoc, CTO & Co-Founder",
+    "summary": "Datadog's CTO calls coding agents like Cursor the killer app for AI. Not only do they increase code creation speed, they also improve code quality. Datadog also integrates with Cursor via MCP for debugging workflows.",
+    "tags": ["Developer Tools", "Code Quality", "CTO Endorsement"],
+    "key_quotes": [
+      {
+        "text": "Coding agents like Cursor have become the killer app for AI. Not only do coding agents increase the speed at which code is created, they also improve code quality.",
+        "author": "Alexis Le-Quoc",
+        "title": "CTO & Co-Founder, Datadog"
+      }
+    ]
+  },
+  {
+    "company": "monday.com",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "Work Management / SaaS",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Code Generation", "Refactoring", "Testing", "Prototyping"],
+    "key_metric": "2-5x increase in engineering velocity",
+    "spokesperson": "Roni Avidov, Senior R&D Team Lead",
+    "summary": "monday.com saw a 2-5x increase in engineering velocity with Cursor, along with better handling of tech debt, code refactors, unit testing, and the ability to prototype ideas in hours instead of weeks. Their R&D team lead converted from being 'team IntelliJ for life.'",
+    "tags": ["Velocity", "Tech Debt", "Prototyping", "Testing", "IDE Switch"],
+    "key_quotes": [
+      {
+        "text": "I was team IntelliJ for life and am now one of Cursor's top fans. Across the board, we've seen a 2-5x increase in engineering velocity, better handling of tech debt, code refactors, unit testing, and the ability to prototype ideas in hours instead of weeks.",
+        "author": "Roni Avidov",
+        "title": "Senior R&D Team Lead, monday.com"
+      }
+    ]
+  },
+  {
+    "company": "Trimble",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers/trimble",
+    "source_type": "Customer Testimonial",
+    "industry": "Technology / Transportation / Construction",
+    "company_size": "800+ engineers",
+    "primary_use_cases": ["Code Generation", "Refactoring", "Legacy Systems"],
+    "key_metric": "800+ engineers deployed; 99% say Cursor made them more productive",
+    "spokesperson": "Jonah McIntire, Chief Product & Technology Officer",
+    "summary": "Trimble rolled out Cursor to over 800 engineers across diverse technology stacks, from edge computing on hardware to multi-tenant marketplaces. Over 99% of engineers reported that Cursor made them more productive and outperformed previous AI tooling. By the end of the pilot, engineers from every product line were utilizing Cursor.",
+    "tags": ["Enterprise", "Diverse Stacks", "Edge Computing", "Legacy Systems", "Near-Universal Satisfaction"],
+    "key_quotes": [
+      {
+        "text": "We've rolled Cursor out to over 800 engineers and are seeing significant output lift in how teams plan and execute code changes. Whether you're building new applications or refactoring legacy systems, I would highly recommend Cursor to other CTOs.",
+        "author": "Jonah McIntire",
+        "title": "Chief Product & Technology Officer, Trimble"
+      }
+    ]
+  },
+  {
+    "company": "Fox Corporation",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "Media / Entertainment",
+    "company_size": "Engineering and broader tech teams",
+    "primary_use_cases": ["Code Generation", "Enterprise AI"],
+    "key_metric": "CTO reports unprecedented employee gratitude for the technology",
+    "spokesperson": "Melody Hildebrandt, CTO",
+    "summary": "Fox's CTO describes the cultural impact of bringing Cursor to teams: employees texting and Slacking 'Thank you for getting this technology here.' Fox uses a bottom-up adoption model where teams learn from each other rather than top-down mandates, with AI applied across creating stories, curating content, and carrying out repetitive tasks.",
+    "tags": ["Media", "Entertainment", "Bottom-up Adoption", "Cultural Impact"],
+    "key_quotes": [
+      {
+        "text": "I've never, as a CTO, received so many texts or Slack messages from employees just saying 'Thank you for getting this technology here.'",
+        "author": "Melody Hildebrandt",
+        "title": "CTO, Fox"
+      }
+    ]
+  },
+  {
+    "company": "OpenAI",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "AI Research / Technology",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Code Generation", "Interactive Development"],
+    "key_metric": "Used by OpenAI's own engineering team; 'we are at the 1% of what's possible'",
+    "spokesperson": "Greg Brockman, President",
+    "summary": "OpenAI's President describes Cursor as making programming more fun -- less about digging through pages, more about what you want to happen. He believes interactive experiences like Cursor are where frontier models shine brightest and that we are only at 1% of what is possible.",
+    "tags": ["AI Research", "Developer Experience", "Frontier Models"],
+    "key_quotes": [
+      {
+        "text": "It's definitely becoming more fun to be a programmer. It's less about digging through pages and more about what you want to happen. We are at the 1% of what's possible.",
+        "author": "Greg Brockman",
+        "title": "President, OpenAI"
+      }
+    ]
+  },
+  {
+    "company": "Sierra",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "AI / Customer Service",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Code Generation"],
+    "key_metric": "Transforms how software is created",
+    "spokesperson": "Bret Taylor, Co-Founder & CEO (former Salesforce CEO)",
+    "summary": "Bret Taylor, former Salesforce CEO and co-founder of Sierra, describes Cursor as transforming how he creates software, calling it a tool that enhances his life's passion of building software.",
+    "tags": ["AI", "CEO Endorsement", "Developer Experience"],
+    "key_quotes": [
+      {
+        "text": "I'm really a big fan of Cursor. I've enjoyed taking something I love and has been my life's passion and seeing how this AI tool transforms how I create software.",
+        "author": "Bret Taylor",
+        "title": "Co-Founder & CEO, Sierra"
+      }
+    ]
+  },
+  {
+    "company": "Mercado Libre",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "E-commerce / Fintech (Latin America)",
+    "company_size": "Large engineering org",
+    "primary_use_cases": ["Code Generation", "Prototyping", "Onboarding", "Debugging"],
+    "key_metric": "Features built in a day that would otherwise take weeks to prototype",
+    "spokesperson": "Oscar Mullin, VP of Technology",
+    "summary": "Mercado Libre sees features built in a day that might otherwise have taken weeks to prototype. Cursor helps teams ramp up on unfamiliar codebases, generate meaningful code, and debug complex issues with more speed and confidence.",
+    "tags": ["E-commerce", "Latin America", "Prototyping", "Onboarding", "Debugging"],
+    "key_quotes": [
+      {
+        "text": "In certain cases, we've seen features built in a day that might otherwise have taken weeks to prototype. It helps teams ramp up on unfamiliar codebases, generate meaningful code, and debug complex issues with more speed and confidence.",
+        "author": "Oscar Mullin",
+        "title": "VP of Technology, Mercado Libre"
+      }
+    ]
+  },
+  {
+    "company": "eBay",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "E-commerce / Marketplace",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Code Generation", "Exploration"],
+    "key_metric": "Indispensable daily workflow tool; enables curiosity in new problem spaces",
+    "spokesperson": "Lathesh Karkera, Software Engineer",
+    "summary": "eBay engineers describe Cursor as not just a productivity tool but one that makes them more curious and confident to explore new problem spaces. It has become an indispensable part of daily workflows.",
+    "tags": ["E-commerce", "Developer Experience", "Exploration"],
+    "key_quotes": [
+      {
+        "text": "Cursor has helped me not only be more productive but also more curious and confident to explore new problem spaces. It's genuinely become an indispensable tool in my daily workflow.",
+        "author": "Lathesh Karkera",
+        "title": "Software Engineer, eBay"
+      }
+    ]
+  },
+  {
+    "company": "OnePay",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "Fintech / Payments",
+    "company_size": "Engineering org",
+    "primary_use_cases": ["Debugging", "Documentation", "Onboarding"],
+    "key_metric": "Exceptional debugging with historical code change attribution; faster new joiner ramp",
+    "spokesperson": "Moe Matar, CTO",
+    "summary": "OnePay's CTO describes Cursor as the popular IDE 'on steroids' -- exceptional at debugging, attributing issues to precise historical code changes, writing documentation, and helping new joiners ramp up faster.",
+    "tags": ["Fintech", "Debugging", "Documentation", "Onboarding"],
+    "key_quotes": [
+      {
+        "text": "Cursor took the most popular IDE in the world and put it on steroids. It's exceptional at debugging issues and attributing them to precise historical code changes, has stellar writing documentation skills, and has been incredibly helpful for new joiners.",
+        "author": "Moe Matar",
+        "title": "CTO, OnePay"
+      }
+    ]
+  },
+  {
+    "company": "Optiver",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "Financial Services / Trading",
+    "company_size": "Firm-wide deployment",
+    "primary_use_cases": ["Code Generation", "Trading Systems"],
+    "key_metric": "Firm-wide deployment at a global trading firm; robust at scale and complexity",
+    "spokesperson": "Scott McKenzie, Head of Engineering",
+    "summary": "Optiver expanded Cursor to firm-wide deployment across a global trading firm where almost everyone writes code. Teams find Cursor robust, context-aware, and flexible enough to support the scale and complexity of global trading operations.",
+    "tags": ["Trading", "Finance", "Firm-wide", "Scale", "Complexity"],
+    "key_quotes": [
+      {
+        "text": "At Optiver, we've recently expanded our Cursor usage to firm-wide deployment. Our teams have consistently found Cursor to be robust, context-aware, and flexible enough to support the scale and complexity of a global trading firm.",
+        "author": "Scott McKenzie",
+        "title": "Head of Engineering, Optiver"
+      }
+    ]
+  },
+  {
+    "company": "Decagon",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial",
+    "industry": "AI / Customer Support",
+    "company_size": "100% engineering adoption",
+    "primary_use_cases": ["Code Generation", "Navigating Complexity"],
+    "key_metric": "100% engineering adoption; essential tool for navigating complexity",
+    "spokesperson": "Ashwin Sreenivas, Co-Founder",
+    "summary": "Decagon achieved 100% adoption across their engineering team. Cursor is the tool every engineer, including the co-founder, instinctively turns to when navigating complexity or hitting a wall.",
+    "tags": ["AI Startup", "100% Adoption", "Complexity"],
+    "key_quotes": [
+      {
+        "text": "Cursor is the tool that every engineer (including me) instinctively turns to when navigating complexity or hitting a wall. With 100% adoption across our engineering team, Cursor has become an essential part of how we build.",
+        "author": "Ashwin Sreenivas",
+        "title": "Co-Founder, Decagon"
+      }
+    ]
+  },
+  {
+    "company": "R Systems",
+    "published_date": "2025-07-22",
+    "url": "https://www.rsystems.com/news-press-release/r-systems-announces-strategic-adoption-of-cursor-to-embed-ai-across-sdlc/",
+    "source_type": "Company Press Release",
+    "industry": "IT Services / Consulting",
+    "company_size": "1,000+ AI-focused engineers",
+    "primary_use_cases": ["Code Generation", "Testing", "Documentation", "DevOps", "Migrations"],
+    "key_metric": "~30% delivery velocity improvement; 25% defect density reduction; 50% faster onboarding; report build time cut from 12 to <7 hours",
+    "spokesperson": "R Systems leadership",
+    "summary": "R Systems established a dedicated Co-Innovation Lab to deploy Cursor across 1,000+ AI-focused engineers with a reusable AI-SDLC Framework. One project migrated 45 complex reports into Vue.js dashboards in 8 weeks, cutting average report build time from ~12 to <7 hours and doubling engineering velocity.",
+    "tags": ["IT Services", "Consulting", "SDLC Framework", "Migrations", "Playbooks"],
+    "key_quotes": []
+  },
+  {
+    "company": "Carlyle Group",
+    "published_date": "2025-12-01",
+    "url": "https://cursor.com/en/customers",
+    "source_type": "Customer Testimonial (Investor)",
+    "industry": "Private Equity / Investment",
+    "company_size": "Portfolio companies + internal use",
+    "primary_use_cases": ["Code Generation", "Prototyping", "Scaling"],
+    "key_metric": "Engineering teams across portfolio accelerating product roadmaps",
+    "spokesperson": "Daniel Ducic, Investor",
+    "summary": "The Carlyle Group sees engineering teams across its portfolio and internally using Cursor to accelerate product roadmaps, ship features faster, and handle demand surges while maintaining quality. They highlight the ability to start small and scale as a differentiator.",
+    "tags": ["Private Equity", "Investor", "Portfolio", "Scaling"],
+    "key_quotes": [
+      {
+        "text": "We're seeing engineering teams in our portfolio and at Carlyle use Cursor to accelerate product roadmaps, ship features faster, and handle surges in demand, all while maintaining quality and focus.",
+        "author": "Daniel Ducic",
+        "title": "Investor, Carlyle"
+      }
+    ]
+  }
+]
