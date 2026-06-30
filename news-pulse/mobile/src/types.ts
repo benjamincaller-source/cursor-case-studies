@@ -8,6 +8,7 @@ export interface NewsItem {
   publishedAt: string;
   imageUrl: string | null;
   publisher: string;
+  aiSummary?: string | null;
   metrics?: {
     like_count?: number;
     retweet_count?: number;
@@ -34,6 +35,7 @@ export interface SavedTopic {
   label: string;
   emoji: string;
   addedAt: string;
+  notificationsEnabled?: boolean;
 }
 
 export interface Suggestion {

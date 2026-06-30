@@ -1,6 +1,6 @@
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
-import type { SearchResult, Suggestion } from './types';
+import type { SearchResult, Suggestion, SavedTopic } from './types';
 
 function getApiBaseUrl(): string {
   const envUrl = process.env.EXPO_PUBLIC_API_URL;
@@ -21,8 +21,13 @@ function getApiBaseUrl(): string {
 
 const API_BASE = getApiBaseUrl();
 
-export async function searchNews(query: string): Promise<SearchResult> {
-  const params = new URLSearchParams({ q: query, lang: 'fr', country: 'FR' });
+export async function searchNews(query: string, withSummary = true): Promise<SearchResult> {
+  const params = new URLSearchParams({
+    q: query,
+    lang: 'fr',
+    country: 'FR',
+    ...(withSummary ? { summarize: 'true' } : {}),
+  });
   const response = await fetch(`${API_BASE}/api/search?${params}`);
 
   if (!response.ok) {
@@ -46,6 +51,35 @@ export async function checkHealth(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+export async function registerPushToken(
+  token: string,
+  topics: SavedTopic[],
+): Promise<boolean> {
+  const notifTopics = topics.filter((t) => t.notificationsEnabled !== false);
+  const response = await fetch(`${API_BASE}/api/push/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      token,
+      topics: notifTopics.map((t) => ({
+        query: t.query,
+        label: t.label,
+        emoji: t.emoji,
+      })),
+    }),
+  });
+  return response.ok;
+}
+
+export async function unregisterPushToken(token: string): Promise<boolean> {
+  const response = await fetch(`${API_BASE}/api/push/register`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token }),
+  });
+  return response.ok;
 }
 
 export { API_BASE };

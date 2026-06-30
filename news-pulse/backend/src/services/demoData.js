@@ -21,6 +21,7 @@ function getDemoResults(query) {
           publishedAt: hoursAgo(2),
           imageUrl: null,
           publisher: 'L\'Équipe',
+          aiSummary: 'Le PSG prépare activement le prochain mercato avec plusieurs recrutements visés pour renforcer l\'effectif.',
         },
         {
           id: 'demo-psg-2',
@@ -32,6 +33,7 @@ function getDemoResults(query) {
           publishedAt: hoursAgo(5),
           imageUrl: null,
           publisher: 'RMC Sport',
+          aiSummary: 'Les joueurs du Paris Saint-Germain ont repris l\'entraînement collectivement en vue de la saison à venir.',
         },
       ]
     : isCursor
@@ -46,6 +48,7 @@ function getDemoResults(query) {
             publishedAt: hoursAgo(1),
             imageUrl: null,
             publisher: 'TechCrunch',
+            aiSummary: 'Cursor, l\'éditeur de code alimenté par l\'IA, poursuit sa levée de fonds pour accélérer son développement produit.',
           },
           {
             id: 'demo-cursor-2',
@@ -57,6 +60,7 @@ function getDemoResults(query) {
             publishedAt: hoursAgo(8),
             imageUrl: null,
             publisher: 'The Verge',
+            aiSummary: 'L\'éditeur Cursor gagne en adoption auprès des développeurs grâce à ses fonctionnalités d\'IA générative intégrées.',
           },
         ]
       : [
@@ -70,6 +74,7 @@ function getDemoResults(query) {
             publishedAt: hoursAgo(3),
             imageUrl: null,
             publisher: 'Google News',
+            aiSummary: `Synthèse des dernières actualités concernant ${query}, agrégées depuis plusieurs sources web.`,
           },
         ];
 
@@ -111,12 +116,23 @@ function getDemoResults(query) {
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt),
   );
 
+  const articlesWithSummary = articles.map((a) => ({
+    ...a,
+    aiSummary: a.aiSummary || null,
+  }));
+
+  const itemsWithSummary = items.map((item) =>
+    item.type === 'article'
+      ? { ...item, aiSummary: articlesWithSummary.find((a) => a.id === item.id)?.aiSummary || null }
+      : item,
+  );
+
   return {
     query,
-    total: items.length,
-    articles,
+    total: itemsWithSummary.length,
+    articles: articlesWithSummary,
     tweets,
-    items,
+    items: itemsWithSummary,
     sources: {
       google_news: articles.filter((a) => a.source === 'google_news').length,
       newsapi: articles.filter((a) => a.source === 'newsapi').length,

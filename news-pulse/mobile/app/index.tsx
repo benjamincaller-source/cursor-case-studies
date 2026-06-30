@@ -6,13 +6,20 @@ import {
   ScrollView,
   TouchableOpacity,
   Alert,
+  Switch,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SearchBar } from '../src/components/SearchBar';
 import { TopicChip } from '../src/components/TopicChip';
 import { getSuggestions, checkHealth } from '../src/api';
-import { getSavedTopics, saveTopic, removeTopic } from '../src/storage';
+import {
+  getSavedTopics,
+  saveTopic,
+  removeTopic,
+  toggleTopicNotifications,
+} from '../src/storage';
+import { syncPushSubscriptions } from '../src/notifications';
 import type { SavedTopic, Suggestion } from '../src/types';
 import { colors, spacing, radius } from '../src/theme';
 
@@ -22,6 +29,7 @@ export default function HomeScreen() {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [apiOnline, setApiOnline] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(false);
+  const [pushEnabled, setPushEnabled] = useState(true);
 
   const loadData = useCallback(async () => {
     const [saved, sugg, online] = await Promise.all([
@@ -36,7 +44,10 @@ export default function HomeScreen() {
 
   useEffect(() => {
     loadData();
-  }, [loadData]);
+    if (pushEnabled) {
+      syncPushSubscriptions();
+    }
+  }, [loadData, pushEnabled]);
 
   const navigateToFeed = (query: string, label?: string, emoji?: string) => {
     router.push({
@@ -52,21 +63,26 @@ export default function HomeScreen() {
       label: query.length > 20 ? query.slice(0, 20) + '…' : query,
       emoji: '📰',
       addedAt: new Date().toISOString(),
+      notificationsEnabled: pushEnabled,
     };
     const updated = await saveTopic(topic);
     setTopics(updated);
+    if (pushEnabled) await syncPushSubscriptions();
     setLoading(false);
     navigateToFeed(query, topic.label, topic.emoji);
   };
 
-  const handleSuggestion = (suggestion: Suggestion) => {
+  const handleSuggestion = async (suggestion: Suggestion) => {
     const topic: SavedTopic = {
       query: suggestion.query,
       label: suggestion.label,
       emoji: suggestion.emoji,
       addedAt: new Date().toISOString(),
+      notificationsEnabled: pushEnabled,
     };
-    saveTopic(topic).then(setTopics);
+    const updated = await saveTopic(topic);
+    setTopics(updated);
+    if (pushEnabled) await syncPushSubscriptions();
     navigateToFeed(suggestion.query, suggestion.label, suggestion.emoji);
   };
 
@@ -79,10 +95,33 @@ export default function HomeScreen() {
         {
           text: 'Supprimer',
           style: 'destructive',
-          onPress: () => removeTopic(topic.query).then(setTopics),
+          onPress: async () => {
+            const updated = await removeTopic(topic.query);
+            setTopics(updated);
+            if (pushEnabled) await syncPushSubscriptions();
+          },
         },
       ],
     );
+  };
+
+  const handleToggleTopicNotif = async (topic: SavedTopic) => {
+    const updated = await toggleTopicNotifications(topic.query);
+    setTopics(updated);
+    if (pushEnabled) await syncPushSubscriptions();
+  };
+
+  const handlePushToggle = async (value: boolean) => {
+    setPushEnabled(value);
+    if (value) {
+      const ok = await syncPushSubscriptions();
+      if (!ok) {
+        Alert.alert(
+          'Notifications',
+          'Activez les notifications dans les réglages de votre appareil pour recevoir les alertes.',
+        );
+      }
+    }
   };
 
   return (
@@ -104,6 +143,24 @@ export default function HomeScreen() {
           </View>
         ) : null}
 
+        <View style={styles.pushCard}>
+          <View style={styles.pushRow}>
+            <Text style={styles.pushIcon}>🔔</Text>
+            <View style={styles.pushText}>
+              <Text style={styles.pushTitle}>Alertes nouveaux articles</Text>
+              <Text style={styles.pushSubtitle}>
+                Notification push quand un nouveau article est publié
+              </Text>
+            </View>
+            <Switch
+              value={pushEnabled}
+              onValueChange={handlePushToggle}
+              trackColor={{ false: colors.border, true: colors.primary + '88' }}
+              thumbColor={pushEnabled ? colors.primary : colors.textMuted}
+            />
+          </View>
+        </View>
+
         <SearchBar onSearch={handleSearch} loading={loading} />
 
         {topics.length > 0 ? (
@@ -116,10 +173,13 @@ export default function HomeScreen() {
                   topic={topic}
                   onPress={() => navigateToFeed(topic.query, topic.label, topic.emoji)}
                   onLongPress={() => handleRemoveTopic(topic)}
+                  onToggleNotifications={() => handleToggleTopicNotif(topic)}
                 />
               ))}
             </View>
-            <Text style={styles.hint}>Appui long pour supprimer un sujet</Text>
+            <Text style={styles.hint}>
+              Appui long pour supprimer · 🔔 pour activer/désactiver les alertes
+            </Text>
           </View>
         ) : null}
 
@@ -143,11 +203,13 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.sourcesInfo}>
-          <Text style={styles.sourcesTitle}>Sources agrégées</Text>
+          <Text style={styles.sourcesTitle}>Fonctionnalités</Text>
           <View style={styles.sourceRow}>
             <Text style={styles.sourceBadge}>🌐 Google News</Text>
             <Text style={styles.sourceBadge}>📰 NewsAPI</Text>
             <Text style={styles.sourceBadge}>𝕏 X / Twitter</Text>
+            <Text style={styles.sourceBadge}>✨ Résumés IA</Text>
+            <Text style={styles.sourceBadge}>🔔 Push</Text>
           </View>
         </View>
       </ScrollView>
@@ -166,7 +228,7 @@ const styles = StyleSheet.create({
   },
   hero: {
     alignItems: 'center',
-    marginBottom: spacing.xl,
+    marginBottom: spacing.lg,
     marginTop: spacing.lg,
   },
   logo: {
@@ -198,6 +260,35 @@ const styles = StyleSheet.create({
     color: colors.danger,
     fontSize: 13,
     textAlign: 'center',
+  },
+  pushCard: {
+    backgroundColor: colors.surface,
+    borderRadius: radius.lg,
+    borderWidth: 1,
+    borderColor: colors.border,
+    padding: spacing.md,
+    marginBottom: spacing.md,
+  },
+  pushRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
+  },
+  pushIcon: {
+    fontSize: 24,
+  },
+  pushText: {
+    flex: 1,
+  },
+  pushTitle: {
+    color: colors.text,
+    fontSize: 15,
+    fontWeight: '700',
+  },
+  pushSubtitle: {
+    color: colors.textMuted,
+    fontSize: 12,
+    marginTop: 2,
   },
   section: {
     marginTop: spacing.xl,

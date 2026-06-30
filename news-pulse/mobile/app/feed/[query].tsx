@@ -74,7 +74,7 @@ export default function FeedScreen() {
     return (
       <View style={styles.center}>
         <ActivityIndicator size="large" color={colors.primary} />
-        <Text style={styles.loadingText}>Agrégation en cours…</Text>
+        <Text style={styles.loadingText}>Agrégation et résumés IA en cours…</Text>
       </View>
     );
   }

@@ -37,7 +37,13 @@ export function NewsCard({ item }: NewsCardProps) {
       </View>
       <Text style={styles.title} numberOfLines={3}>{item.title}</Text>
       {item.description ? (
-        <Text style={styles.description} numberOfLines={3}>{item.description}</Text>
+        <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
+      ) : null}
+      {item.aiSummary ? (
+        <View style={styles.summaryBox}>
+          <Text style={styles.summaryLabel}>✨ Résumé IA</Text>
+          <Text style={styles.summaryText}>{item.aiSummary}</Text>
+        </View>
       ) : null}
       <View style={styles.footer}>
         <Text style={styles.publisher}>{item.publisher}</Text>
@@ -89,6 +95,27 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     marginBottom: spacing.sm,
+  },
+  summaryBox: {
+    backgroundColor: colors.primary + '15',
+    borderRadius: radius.md,
+    borderLeftWidth: 3,
+    borderLeftColor: colors.primary,
+    padding: spacing.sm,
+    marginBottom: spacing.sm,
+  },
+  summaryLabel: {
+    color: colors.primaryLight,
+    fontSize: 11,
+    fontWeight: '700',
+    marginBottom: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  summaryText: {
+    color: colors.text,
+    fontSize: 13,
+    lineHeight: 19,
   },
   footer: {
     flexDirection: 'row',
