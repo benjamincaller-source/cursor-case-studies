@@ -1,0 +1,107 @@
+{
+  "team": {
+    "id": "city",
+    "name": "Man. City",
+    "shortName": "MCI",
+    "country": "Angleterre",
+    "league": "premier",
+    "color": "#6CABDD",
+    "accent": "#FFFFFF",
+    "emoji": "🦅",
+    "searchQuery": "Manchester City football"
+  },
+  "competition": {
+    "id": "premier",
+    "name": "Premier League",
+    "country": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "emoji": "🏴"
+  },
+  "matches": [
+    {
+      "id": "m-tomorrow-1",
+      "competitionId": "premier",
+      "status": "SCHEDULED",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "city",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-07-01T16:30:00.000Z",
+      "venue": "Anfield",
+      "homeTeam": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "shortName": "LIV",
+        "color": "#C8102E",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "city",
+        "name": "Man. City",
+        "shortName": "MCI",
+        "color": "#6CABDD",
+        "emoji": "🦅"
+      },
+      "competition": {
+        "id": "premier",
+        "name": "Premier League",
+        "emoji": "🏴"
+      }
+    },
+    {
+      "id": "m-finished-2",
+      "competitionId": "ucl",
+      "status": "FINISHED",
+      "homeTeamId": "city",
+      "awayTeamId": "real",
+      "homeScore": 2,
+      "awayScore": 2,
+      "kickoff": "2026-06-29T21:00:00.000Z",
+      "venue": "Etihad Stadium",
+      "homeTeam": {
+        "id": "city",
+        "name": "Man. City",
+        "shortName": "MCI",
+        "color": "#6CABDD",
+        "emoji": "🦅"
+      },
+      "awayTeam": {
+        "id": "real",
+        "name": "Real Madrid",
+        "shortName": "RMA",
+        "color": "#FEBE10",
+        "emoji": "👑"
+      },
+      "competition": {
+        "id": "ucl",
+        "name": "Ligue des Champions",
+        "emoji": "🏆"
+      }
+    }
+  ],
+  "standing": {
+    "rank": 3,
+    "teamId": "city",
+    "played": 32,
+    "won": 21,
+    "drawn": 7,
+    "lost": 4,
+    "gf": 68,
+    "ga": 32,
+    "points": 70,
+    "form": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "W"
+    ],
+    "team": {
+      "id": "city",
+      "name": "Man. City",
+      "shortName": "MCI",
+      "color": "#6CABDD",
+      "emoji": "🦅"
+    },
+    "competitionId": "premier"
+  }
+}

@@ -26,7 +26,12 @@
       "permissions": ["RECEIVE_BOOT_COMPLETED", "VIBRATE"]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "experiments": {
+      "baseUrl": "/cursor-case-studies"
     },
     "plugins": [
       "expo-router",

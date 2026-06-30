@@ -1,0 +1,40 @@
+{
+  "competitions": [
+    {
+      "id": "ligue1",
+      "name": "Ligue 1",
+      "country": "🇫🇷",
+      "emoji": "🇫🇷"
+    },
+    {
+      "id": "premier",
+      "name": "Premier League",
+      "country": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "emoji": "🏴"
+    },
+    {
+      "id": "laliga",
+      "name": "La Liga",
+      "country": "🇪🇸",
+      "emoji": "🇪🇸"
+    },
+    {
+      "id": "bundesliga",
+      "name": "Bundesliga",
+      "country": "🇩🇪",
+      "emoji": "🇩🇪"
+    },
+    {
+      "id": "seriea",
+      "name": "Serie A",
+      "country": "🇮🇹",
+      "emoji": "🇮🇹"
+    },
+    {
+      "id": "ucl",
+      "name": "Ligue des Champions",
+      "country": "🏆",
+      "emoji": "🏆"
+    }
+  ]
+}

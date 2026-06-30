@@ -1,0 +1,51 @@
+{
+  "team": {
+    "id": "bayern",
+    "name": "Bayern Munich",
+    "shortName": "BAY",
+    "country": "Allemagne",
+    "league": "bundesliga",
+    "color": "#DC052D",
+    "accent": "#FFFFFF",
+    "emoji": "🔴",
+    "searchQuery": "Bayern Munich football"
+  },
+  "competition": {
+    "id": "bundesliga",
+    "name": "Bundesliga",
+    "country": "🇩🇪",
+    "emoji": "🇩🇪"
+  },
+  "matches": [
+    {
+      "id": "m-today-2",
+      "competitionId": "bundesliga",
+      "status": "SCHEDULED",
+      "homeTeamId": "bayern",
+      "awayTeamId": "inter",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-06-30T18:30:00.000Z",
+      "venue": "Allianz Arena",
+      "homeTeam": {
+        "id": "bayern",
+        "name": "Bayern Munich",
+        "shortName": "BAY",
+        "color": "#DC052D",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "inter",
+        "name": "Inter Milan",
+        "shortName": "INT",
+        "color": "#010E80",
+        "emoji": "⚫"
+      },
+      "competition": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "emoji": "🇩🇪"
+      }
+    }
+  ]
+}

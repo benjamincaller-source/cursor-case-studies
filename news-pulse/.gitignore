@@ -3,3 +3,6 @@ node_modules/
 *.log
 .expo/
 dist/
+mobile/dist/
+backend/data/
+.vercel

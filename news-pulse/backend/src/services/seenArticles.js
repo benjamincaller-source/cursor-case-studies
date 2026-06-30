@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { getDataDir } = require('./dataDir');
 
-const SEEN_FILE = path.join(__dirname, '../../data/seen-articles.json');
+const SEEN_FILE = path.join(getDataDir(), 'seen-articles.json');
 
 function load() {
   try {

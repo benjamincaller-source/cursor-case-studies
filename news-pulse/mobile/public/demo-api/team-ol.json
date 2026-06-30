@@ -1,0 +1,77 @@
+{
+  "team": {
+    "id": "ol",
+    "name": "Lyon",
+    "shortName": "OL",
+    "country": "France",
+    "league": "ligue1",
+    "color": "#1E3A8A",
+    "accent": "#DC2626",
+    "emoji": "🦁",
+    "searchQuery": "OL Olympique Lyon football"
+  },
+  "competition": {
+    "id": "ligue1",
+    "name": "Ligue 1",
+    "country": "🇫🇷",
+    "emoji": "🇫🇷"
+  },
+  "matches": [
+    {
+      "id": "m-finished-1",
+      "competitionId": "ligue1",
+      "status": "FINISHED",
+      "homeTeamId": "ol",
+      "awayTeamId": "psg",
+      "homeScore": 0,
+      "awayScore": 3,
+      "kickoff": "2026-06-29T20:45:00.000Z",
+      "venue": "Groupama Stadium",
+      "homeTeam": {
+        "id": "ol",
+        "name": "Lyon",
+        "shortName": "OL",
+        "color": "#1E3A8A",
+        "emoji": "🦁"
+      },
+      "awayTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    }
+  ],
+  "standing": {
+    "rank": 3,
+    "teamId": "ol",
+    "played": 30,
+    "won": 16,
+    "drawn": 6,
+    "lost": 8,
+    "gf": 45,
+    "ga": 35,
+    "points": 54,
+    "form": [
+      "L",
+      "W",
+      "W",
+      "D",
+      "L"
+    ],
+    "team": {
+      "id": "ol",
+      "name": "Lyon",
+      "shortName": "OL",
+      "color": "#1E3A8A",
+      "emoji": "🦁"
+    },
+    "competitionId": "ligue1"
+  }
+}

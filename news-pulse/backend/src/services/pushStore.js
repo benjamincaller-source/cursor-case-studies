@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { getDataDir } = require('./dataDir');
 
-const STORE_FILE = path.join(__dirname, '../../data/push-subscriptions.json');
+const STORE_FILE = path.join(getDataDir(), 'push-subscriptions.json');
 
 function load() {
   try {

@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { getDataDir } = require('./dataDir');
 
-const CACHE_FILE = path.join(__dirname, '../../data/summaries.json');
+const CACHE_FILE = path.join(getDataDir(), 'summaries.json');
 
 function loadCache() {
   try {
