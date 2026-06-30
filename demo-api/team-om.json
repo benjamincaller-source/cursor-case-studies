@@ -1,0 +1,78 @@
+{
+  "team": {
+    "id": "om",
+    "name": "Marseille",
+    "shortName": "OM",
+    "country": "France",
+    "league": "ligue1",
+    "color": "#2FAEE0",
+    "accent": "#FFFFFF",
+    "emoji": "⚪",
+    "searchQuery": "OM Olympique Marseille football"
+  },
+  "competition": {
+    "id": "ligue1",
+    "name": "Ligue 1",
+    "country": "🇫🇷",
+    "emoji": "🇫🇷"
+  },
+  "matches": [
+    {
+      "id": "m-live-1",
+      "competitionId": "ligue1",
+      "status": "LIVE",
+      "minute": 67,
+      "homeTeamId": "psg",
+      "awayTeamId": "om",
+      "homeScore": 2,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T20:45:00.000Z",
+      "venue": "Parc des Princes",
+      "homeTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "awayTeam": {
+        "id": "om",
+        "name": "Marseille",
+        "shortName": "OM",
+        "color": "#2FAEE0",
+        "emoji": "⚪"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    }
+  ],
+  "standing": {
+    "rank": 2,
+    "teamId": "om",
+    "played": 30,
+    "won": 18,
+    "drawn": 7,
+    "lost": 5,
+    "gf": 52,
+    "ga": 30,
+    "points": 61,
+    "form": [
+      "W",
+      "L",
+      "W",
+      "D",
+      "W"
+    ],
+    "team": {
+      "id": "om",
+      "name": "Marseille",
+      "shortName": "OM",
+      "color": "#2FAEE0",
+      "emoji": "⚪"
+    },
+    "competitionId": "ligue1"
+  }
+}

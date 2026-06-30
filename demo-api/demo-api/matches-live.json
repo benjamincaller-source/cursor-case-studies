@@ -1,0 +1,66 @@
+{
+  "matches": [
+    {
+      "id": "m-live-1",
+      "competitionId": "ligue1",
+      "status": "LIVE",
+      "minute": 67,
+      "homeTeamId": "psg",
+      "awayTeamId": "om",
+      "homeScore": 2,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T20:45:00.000Z",
+      "venue": "Parc des Princes",
+      "homeTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "awayTeam": {
+        "id": "om",
+        "name": "Marseille",
+        "shortName": "OM",
+        "color": "#2FAEE0",
+        "emoji": "⚪"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    },
+    {
+      "id": "m-live-2",
+      "competitionId": "premier",
+      "status": "LIVE",
+      "minute": 34,
+      "homeTeamId": "arsenal",
+      "awayTeamId": "liverpool",
+      "homeScore": 1,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T17:30:00.000Z",
+      "venue": "Emirates Stadium",
+      "homeTeam": {
+        "id": "arsenal",
+        "name": "Arsenal",
+        "shortName": "ARS",
+        "color": "#EF0107",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "shortName": "LIV",
+        "color": "#C8102E",
+        "emoji": "🔴"
+      },
+      "competition": {
+        "id": "premier",
+        "name": "Premier League",
+        "emoji": "🏴"
+      }
+    }
+  ]
+}

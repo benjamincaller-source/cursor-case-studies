@@ -1,0 +1,217 @@
+{
+  "matches": [
+    {
+      "id": "m-live-1",
+      "competitionId": "ligue1",
+      "status": "LIVE",
+      "minute": 67,
+      "homeTeamId": "psg",
+      "awayTeamId": "om",
+      "homeScore": 2,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T20:45:00.000Z",
+      "venue": "Parc des Princes",
+      "homeTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "awayTeam": {
+        "id": "om",
+        "name": "Marseille",
+        "shortName": "OM",
+        "color": "#2FAEE0",
+        "emoji": "⚪"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    },
+    {
+      "id": "m-live-2",
+      "competitionId": "premier",
+      "status": "LIVE",
+      "minute": 34,
+      "homeTeamId": "arsenal",
+      "awayTeamId": "liverpool",
+      "homeScore": 1,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T17:30:00.000Z",
+      "venue": "Emirates Stadium",
+      "homeTeam": {
+        "id": "arsenal",
+        "name": "Arsenal",
+        "shortName": "ARS",
+        "color": "#EF0107",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "shortName": "LIV",
+        "color": "#C8102E",
+        "emoji": "🔴"
+      },
+      "competition": {
+        "id": "premier",
+        "name": "Premier League",
+        "emoji": "🏴"
+      }
+    },
+    {
+      "id": "m-tomorrow-1",
+      "competitionId": "premier",
+      "status": "SCHEDULED",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "city",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-07-01T16:30:00.000Z",
+      "venue": "Anfield",
+      "homeTeam": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "shortName": "LIV",
+        "color": "#C8102E",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "city",
+        "name": "Man. City",
+        "shortName": "MCI",
+        "color": "#6CABDD",
+        "emoji": "🦅"
+      },
+      "competition": {
+        "id": "premier",
+        "name": "Premier League",
+        "emoji": "🏴"
+      }
+    },
+    {
+      "id": "m-today-1",
+      "competitionId": "laliga",
+      "status": "SCHEDULED",
+      "homeTeamId": "real",
+      "awayTeamId": "barca",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-06-30T21:00:00.000Z",
+      "venue": "Santiago Bernabéu",
+      "homeTeam": {
+        "id": "real",
+        "name": "Real Madrid",
+        "shortName": "RMA",
+        "color": "#FEBE10",
+        "emoji": "👑"
+      },
+      "awayTeam": {
+        "id": "barca",
+        "name": "FC Barcelone",
+        "shortName": "BAR",
+        "color": "#A50044",
+        "emoji": "🔴"
+      },
+      "competition": {
+        "id": "laliga",
+        "name": "La Liga",
+        "emoji": "🇪🇸"
+      }
+    },
+    {
+      "id": "m-today-2",
+      "competitionId": "bundesliga",
+      "status": "SCHEDULED",
+      "homeTeamId": "bayern",
+      "awayTeamId": "inter",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-06-30T18:30:00.000Z",
+      "venue": "Allianz Arena",
+      "homeTeam": {
+        "id": "bayern",
+        "name": "Bayern Munich",
+        "shortName": "BAY",
+        "color": "#DC052D",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "inter",
+        "name": "Inter Milan",
+        "shortName": "INT",
+        "color": "#010E80",
+        "emoji": "⚫"
+      },
+      "competition": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "emoji": "🇩🇪"
+      }
+    },
+    {
+      "id": "m-finished-2",
+      "competitionId": "ucl",
+      "status": "FINISHED",
+      "homeTeamId": "city",
+      "awayTeamId": "real",
+      "homeScore": 2,
+      "awayScore": 2,
+      "kickoff": "2026-06-29T21:00:00.000Z",
+      "venue": "Etihad Stadium",
+      "homeTeam": {
+        "id": "city",
+        "name": "Man. City",
+        "shortName": "MCI",
+        "color": "#6CABDD",
+        "emoji": "🦅"
+      },
+      "awayTeam": {
+        "id": "real",
+        "name": "Real Madrid",
+        "shortName": "RMA",
+        "color": "#FEBE10",
+        "emoji": "👑"
+      },
+      "competition": {
+        "id": "ucl",
+        "name": "Ligue des Champions",
+        "emoji": "🏆"
+      }
+    },
+    {
+      "id": "m-finished-1",
+      "competitionId": "ligue1",
+      "status": "FINISHED",
+      "homeTeamId": "ol",
+      "awayTeamId": "psg",
+      "homeScore": 0,
+      "awayScore": 3,
+      "kickoff": "2026-06-29T20:45:00.000Z",
+      "venue": "Groupama Stadium",
+      "homeTeam": {
+        "id": "ol",
+        "name": "Lyon",
+        "shortName": "OL",
+        "color": "#1E3A8A",
+        "emoji": "🦁"
+      },
+      "awayTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    }
+  ],
+  "live": 2
+}

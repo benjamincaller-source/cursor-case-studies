@@ -1,0 +1,81 @@
+{
+  "team": {
+    "id": "real",
+    "name": "Real Madrid",
+    "shortName": "RMA",
+    "country": "Espagne",
+    "league": "laliga",
+    "color": "#FEBE10",
+    "accent": "#FFFFFF",
+    "emoji": "👑",
+    "searchQuery": "Real Madrid football"
+  },
+  "competition": {
+    "id": "laliga",
+    "name": "La Liga",
+    "country": "🇪🇸",
+    "emoji": "🇪🇸"
+  },
+  "matches": [
+    {
+      "id": "m-today-1",
+      "competitionId": "laliga",
+      "status": "SCHEDULED",
+      "homeTeamId": "real",
+      "awayTeamId": "barca",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-06-30T21:00:00.000Z",
+      "venue": "Santiago Bernabéu",
+      "homeTeam": {
+        "id": "real",
+        "name": "Real Madrid",
+        "shortName": "RMA",
+        "color": "#FEBE10",
+        "emoji": "👑"
+      },
+      "awayTeam": {
+        "id": "barca",
+        "name": "FC Barcelone",
+        "shortName": "BAR",
+        "color": "#A50044",
+        "emoji": "🔴"
+      },
+      "competition": {
+        "id": "laliga",
+        "name": "La Liga",
+        "emoji": "🇪🇸"
+      }
+    },
+    {
+      "id": "m-finished-2",
+      "competitionId": "ucl",
+      "status": "FINISHED",
+      "homeTeamId": "city",
+      "awayTeamId": "real",
+      "homeScore": 2,
+      "awayScore": 2,
+      "kickoff": "2026-06-29T21:00:00.000Z",
+      "venue": "Etihad Stadium",
+      "homeTeam": {
+        "id": "city",
+        "name": "Man. City",
+        "shortName": "MCI",
+        "color": "#6CABDD",
+        "emoji": "🦅"
+      },
+      "awayTeam": {
+        "id": "real",
+        "name": "Real Madrid",
+        "shortName": "RMA",
+        "color": "#FEBE10",
+        "emoji": "👑"
+      },
+      "competition": {
+        "id": "ucl",
+        "name": "Ligue des Champions",
+        "emoji": "🏆"
+      }
+    }
+  ]
+}

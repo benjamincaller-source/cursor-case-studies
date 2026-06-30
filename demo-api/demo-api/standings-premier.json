@@ -1,0 +1,83 @@
+{
+  "competitionId": "premier",
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": "arsenal",
+      "played": 32,
+      "won": 23,
+      "drawn": 5,
+      "lost": 4,
+      "gf": 72,
+      "ga": 28,
+      "points": 74,
+      "form": [
+        "W",
+        "W",
+        "W",
+        "D",
+        "W"
+      ],
+      "team": {
+        "id": "arsenal",
+        "name": "Arsenal",
+        "shortName": "ARS",
+        "color": "#EF0107",
+        "emoji": "🔴"
+      },
+      "competitionId": "premier"
+    },
+    {
+      "rank": 2,
+      "teamId": "liverpool",
+      "played": 32,
+      "won": 22,
+      "drawn": 6,
+      "lost": 4,
+      "gf": 70,
+      "ga": 30,
+      "points": 72,
+      "form": [
+        "W",
+        "D",
+        "W",
+        "W",
+        "L"
+      ],
+      "team": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "shortName": "LIV",
+        "color": "#C8102E",
+        "emoji": "🔴"
+      },
+      "competitionId": "premier"
+    },
+    {
+      "rank": 3,
+      "teamId": "city",
+      "played": 32,
+      "won": 21,
+      "drawn": 7,
+      "lost": 4,
+      "gf": 68,
+      "ga": 32,
+      "points": 70,
+      "form": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "W"
+      ],
+      "team": {
+        "id": "city",
+        "name": "Man. City",
+        "shortName": "MCI",
+        "color": "#6CABDD",
+        "emoji": "🦅"
+      },
+      "competitionId": "premier"
+    }
+  ]
+}

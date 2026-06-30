@@ -1,0 +1,135 @@
+{
+  "competitionId": "ligue1",
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": "psg",
+      "played": 30,
+      "won": 22,
+      "drawn": 5,
+      "lost": 3,
+      "gf": 68,
+      "ga": 22,
+      "points": 71,
+      "form": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "W"
+      ],
+      "team": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "competitionId": "ligue1"
+    },
+    {
+      "rank": 2,
+      "teamId": "om",
+      "played": 30,
+      "won": 18,
+      "drawn": 7,
+      "lost": 5,
+      "gf": 52,
+      "ga": 30,
+      "points": 61,
+      "form": [
+        "W",
+        "L",
+        "W",
+        "D",
+        "W"
+      ],
+      "team": {
+        "id": "om",
+        "name": "Marseille",
+        "shortName": "OM",
+        "color": "#2FAEE0",
+        "emoji": "⚪"
+      },
+      "competitionId": "ligue1"
+    },
+    {
+      "rank": 3,
+      "teamId": "ol",
+      "played": 30,
+      "won": 16,
+      "drawn": 6,
+      "lost": 8,
+      "gf": 45,
+      "ga": 35,
+      "points": 54,
+      "form": [
+        "L",
+        "W",
+        "W",
+        "D",
+        "L"
+      ],
+      "team": {
+        "id": "ol",
+        "name": "Lyon",
+        "shortName": "OL",
+        "color": "#1E3A8A",
+        "emoji": "🦁"
+      },
+      "competitionId": "ligue1"
+    },
+    {
+      "rank": 4,
+      "teamId": "monaco",
+      "played": 30,
+      "won": 15,
+      "drawn": 7,
+      "lost": 8,
+      "gf": 48,
+      "ga": 38,
+      "points": 52,
+      "form": [
+        "D",
+        "W",
+        "W",
+        "L",
+        "W"
+      ],
+      "team": {
+        "id": "monaco",
+        "name": "monaco",
+        "shortName": "MON",
+        "color": "#333",
+        "emoji": "⚽"
+      },
+      "competitionId": "ligue1"
+    },
+    {
+      "rank": 5,
+      "teamId": "lille",
+      "played": 30,
+      "won": 14,
+      "drawn": 8,
+      "lost": 8,
+      "gf": 42,
+      "ga": 32,
+      "points": 50,
+      "form": [
+        "W",
+        "D",
+        "L",
+        "W",
+        "D"
+      ],
+      "team": {
+        "id": "lille",
+        "name": "lille",
+        "shortName": "LIL",
+        "color": "#333",
+        "emoji": "⚽"
+      },
+      "competitionId": "ligue1"
+    }
+  ]
+}

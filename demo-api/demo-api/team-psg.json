@@ -1,0 +1,108 @@
+{
+  "team": {
+    "id": "psg",
+    "name": "Paris SG",
+    "shortName": "PSG",
+    "country": "France",
+    "league": "ligue1",
+    "color": "#004170",
+    "accent": "#DA020E",
+    "emoji": "🔵",
+    "searchQuery": "PSG Paris Saint-Germain football"
+  },
+  "competition": {
+    "id": "ligue1",
+    "name": "Ligue 1",
+    "country": "🇫🇷",
+    "emoji": "🇫🇷"
+  },
+  "matches": [
+    {
+      "id": "m-live-1",
+      "competitionId": "ligue1",
+      "status": "LIVE",
+      "minute": 67,
+      "homeTeamId": "psg",
+      "awayTeamId": "om",
+      "homeScore": 2,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T20:45:00.000Z",
+      "venue": "Parc des Princes",
+      "homeTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "awayTeam": {
+        "id": "om",
+        "name": "Marseille",
+        "shortName": "OM",
+        "color": "#2FAEE0",
+        "emoji": "⚪"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    },
+    {
+      "id": "m-finished-1",
+      "competitionId": "ligue1",
+      "status": "FINISHED",
+      "homeTeamId": "ol",
+      "awayTeamId": "psg",
+      "homeScore": 0,
+      "awayScore": 3,
+      "kickoff": "2026-06-29T20:45:00.000Z",
+      "venue": "Groupama Stadium",
+      "homeTeam": {
+        "id": "ol",
+        "name": "Lyon",
+        "shortName": "OL",
+        "color": "#1E3A8A",
+        "emoji": "🦁"
+      },
+      "awayTeam": {
+        "id": "psg",
+        "name": "Paris SG",
+        "shortName": "PSG",
+        "color": "#004170",
+        "emoji": "🔵"
+      },
+      "competition": {
+        "id": "ligue1",
+        "name": "Ligue 1",
+        "emoji": "🇫🇷"
+      }
+    }
+  ],
+  "standing": {
+    "rank": 1,
+    "teamId": "psg",
+    "played": 30,
+    "won": 22,
+    "drawn": 5,
+    "lost": 3,
+    "gf": 68,
+    "ga": 22,
+    "points": 71,
+    "form": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "W"
+    ],
+    "team": {
+      "id": "psg",
+      "name": "Paris SG",
+      "shortName": "PSG",
+      "color": "#004170",
+      "emoji": "🔵"
+    },
+    "competitionId": "ligue1"
+  }
+}
