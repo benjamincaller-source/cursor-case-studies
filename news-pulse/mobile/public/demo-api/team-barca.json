@@ -1,0 +1,51 @@
+{
+  "team": {
+    "id": "barca",
+    "name": "FC Barcelone",
+    "shortName": "BAR",
+    "country": "Espagne",
+    "league": "laliga",
+    "color": "#A50044",
+    "accent": "#004D98",
+    "emoji": "🔴",
+    "searchQuery": "FC Barcelone football"
+  },
+  "competition": {
+    "id": "laliga",
+    "name": "La Liga",
+    "country": "🇪🇸",
+    "emoji": "🇪🇸"
+  },
+  "matches": [
+    {
+      "id": "m-today-1",
+      "competitionId": "laliga",
+      "status": "SCHEDULED",
+      "homeTeamId": "real",
+      "awayTeamId": "barca",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-06-30T21:00:00.000Z",
+      "venue": "Santiago Bernabéu",
+      "homeTeam": {
+        "id": "real",
+        "name": "Real Madrid",
+        "shortName": "RMA",
+        "color": "#FEBE10",
+        "emoji": "👑"
+      },
+      "awayTeam": {
+        "id": "barca",
+        "name": "FC Barcelone",
+        "shortName": "BAR",
+        "color": "#A50044",
+        "emoji": "🔴"
+      },
+      "competition": {
+        "id": "laliga",
+        "name": "La Liga",
+        "emoji": "🇪🇸"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "pulse-foot",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../mobile && npm install --legacy-peer-deps",
+    "generate:demo-api": "node scripts/generate-static-api.js",
+    "build:web": "npm run generate:demo-api && cd mobile && EXPO_PUBLIC_API_URL= npx expo export --platform web",
+    "build": "npm run build:web",
+    "start:api": "cd backend && npm start"
+  },
+  "dependencies": {
+    "serverless-http": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^2.7.0",
+    "rss-parser": "^3.13.0"
+  }
+}

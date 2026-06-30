@@ -1,0 +1,19 @@
+{
+  "name": "news-pulse-backend",
+  "version": "1.0.0",
+  "description": "API d'agrégation d'actualités (web + X)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^2.7.0",
+    "rss-parser": "^3.13.0",
+    "serverless-http": "^3.2.0"
+  }
+}

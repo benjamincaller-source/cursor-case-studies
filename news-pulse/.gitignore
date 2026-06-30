@@ -1,0 +1,8 @@
+node_modules/
+.env
+*.log
+.expo/
+dist/
+mobile/dist/
+backend/data/
+.vercel

@@ -1,0 +1,78 @@
+{
+  "team": {
+    "id": "arsenal",
+    "name": "Arsenal",
+    "shortName": "ARS",
+    "country": "Angleterre",
+    "league": "premier",
+    "color": "#EF0107",
+    "accent": "#FFFFFF",
+    "emoji": "🔴",
+    "searchQuery": "Arsenal football"
+  },
+  "competition": {
+    "id": "premier",
+    "name": "Premier League",
+    "country": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "emoji": "🏴"
+  },
+  "matches": [
+    {
+      "id": "m-live-2",
+      "competitionId": "premier",
+      "status": "LIVE",
+      "minute": 34,
+      "homeTeamId": "arsenal",
+      "awayTeamId": "liverpool",
+      "homeScore": 1,
+      "awayScore": 1,
+      "kickoff": "2026-06-30T17:30:00.000Z",
+      "venue": "Emirates Stadium",
+      "homeTeam": {
+        "id": "arsenal",
+        "name": "Arsenal",
+        "shortName": "ARS",
+        "color": "#EF0107",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "shortName": "LIV",
+        "color": "#C8102E",
+        "emoji": "🔴"
+      },
+      "competition": {
+        "id": "premier",
+        "name": "Premier League",
+        "emoji": "🏴"
+      }
+    }
+  ],
+  "standing": {
+    "rank": 1,
+    "teamId": "arsenal",
+    "played": 32,
+    "won": 23,
+    "drawn": 5,
+    "lost": 4,
+    "gf": 72,
+    "ga": 28,
+    "points": 74,
+    "form": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "team": {
+      "id": "arsenal",
+      "name": "Arsenal",
+      "shortName": "ARS",
+      "color": "#EF0107",
+      "emoji": "🔴"
+    },
+    "competitionId": "premier"
+  }
+}

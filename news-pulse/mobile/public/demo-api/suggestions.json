@@ -1,0 +1,64 @@
+{
+  "suggestions": [
+    {
+      "query": "PSG Paris Saint-Germain football",
+      "label": "PSG",
+      "emoji": "🔵",
+      "teamId": "psg"
+    },
+    {
+      "query": "OM Olympique Marseille football",
+      "label": "OM",
+      "emoji": "⚪",
+      "teamId": "om"
+    },
+    {
+      "query": "OL Olympique Lyon football",
+      "label": "OL",
+      "emoji": "🦁",
+      "teamId": "ol"
+    },
+    {
+      "query": "Real Madrid football",
+      "label": "RMA",
+      "emoji": "👑",
+      "teamId": "real"
+    },
+    {
+      "query": "FC Barcelone football",
+      "label": "BAR",
+      "emoji": "🔴",
+      "teamId": "barca"
+    },
+    {
+      "query": "Manchester City football",
+      "label": "MCI",
+      "emoji": "🦅",
+      "teamId": "city"
+    },
+    {
+      "query": "Arsenal football",
+      "label": "ARS",
+      "emoji": "🔴",
+      "teamId": "arsenal"
+    },
+    {
+      "query": "Liverpool football",
+      "label": "LIV",
+      "emoji": "🔴",
+      "teamId": "liverpool"
+    },
+    {
+      "query": "Bayern Munich football",
+      "label": "BAY",
+      "emoji": "🔴",
+      "teamId": "bayern"
+    },
+    {
+      "query": "Inter Milan football",
+      "label": "INT",
+      "emoji": "⚫",
+      "teamId": "inter"
+    }
+  ]
+}

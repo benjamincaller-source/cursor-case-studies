@@ -1,0 +1,51 @@
+{
+  "team": {
+    "id": "inter",
+    "name": "Inter Milan",
+    "shortName": "INT",
+    "country": "Italie",
+    "league": "seriea",
+    "color": "#010E80",
+    "accent": "#000000",
+    "emoji": "⚫",
+    "searchQuery": "Inter Milan football"
+  },
+  "competition": {
+    "id": "seriea",
+    "name": "Serie A",
+    "country": "🇮🇹",
+    "emoji": "🇮🇹"
+  },
+  "matches": [
+    {
+      "id": "m-today-2",
+      "competitionId": "bundesliga",
+      "status": "SCHEDULED",
+      "homeTeamId": "bayern",
+      "awayTeamId": "inter",
+      "homeScore": null,
+      "awayScore": null,
+      "kickoff": "2026-06-30T18:30:00.000Z",
+      "venue": "Allianz Arena",
+      "homeTeam": {
+        "id": "bayern",
+        "name": "Bayern Munich",
+        "shortName": "BAY",
+        "color": "#DC052D",
+        "emoji": "🔴"
+      },
+      "awayTeam": {
+        "id": "inter",
+        "name": "Inter Milan",
+        "shortName": "INT",
+        "color": "#010E80",
+        "emoji": "⚫"
+      },
+      "competition": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "emoji": "🇩🇪"
+      }
+    }
+  ]
+}
