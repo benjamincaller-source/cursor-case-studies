@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { NewsCard } from '../../src/components/NewsCard';
+import { FootballNewsCard } from '../../src/components/FootballNewsCard';
 import { TweetCard } from '../../src/components/TweetCard';
 import { searchNews } from '../../src/api';
 import type { NewsItem, SearchResult } from '../../src/types';
@@ -68,7 +68,7 @@ export default function FeedScreen() {
   })();
 
   const renderItem = ({ item }: { item: NewsItem }) =>
-    item.type === 'tweet' ? <TweetCard item={item} /> : <NewsCard item={item} />;
+    item.type === 'tweet' ? <TweetCard item={item} /> : <FootballNewsCard item={item} />;
 
   if (loading) {
     return (

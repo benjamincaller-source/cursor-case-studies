@@ -14,14 +14,19 @@ export default function RootLayout() {
     syncPushSubscriptions();
 
     const subscription = addNotificationResponseListener((data) => {
+      const teamId = data.teamId as string | undefined;
       const query = data.query as string | undefined;
-      const label = data.label as string | undefined;
-      const emoji = data.emoji as string | undefined;
 
-      if (query) {
+      if (teamId) {
+        router.push(`/team/${teamId}`);
+      } else if (query) {
         router.push({
           pathname: '/feed/[query]',
-          params: { query, label: label || query, emoji: emoji || '📰' },
+          params: {
+            query,
+            label: (data.label as string) || query,
+            emoji: (data.emoji as string) || '⚽',
+          },
         });
       }
     });
@@ -36,19 +41,13 @@ export default function RootLayout() {
         screenOptions={{
           headerStyle: { backgroundColor: colors.background },
           headerTintColor: colors.text,
-          headerTitleStyle: { fontWeight: '700' },
+          headerTitleStyle: { fontWeight: '800' },
           contentStyle: { backgroundColor: colors.background },
-          animation: 'slide_from_right',
         }}
       >
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="feed/[query]"
-          options={{
-            title: 'Actualités',
-            headerBackTitle: 'Retour',
-          }}
-        />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="team/[id]" options={{ title: 'Équipe' }} />
+        <Stack.Screen name="feed/[query]" options={{ title: 'Actualités' }} />
       </Stack>
     </>
   );

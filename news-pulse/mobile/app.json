@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "News Pulse",
-    "slug": "news-pulse",
+    "name": "Pulse Foot",
+    "slug": "pulse-foot",
     "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

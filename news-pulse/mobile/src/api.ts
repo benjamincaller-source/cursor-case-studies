@@ -1,6 +1,17 @@
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
-import type { SearchResult, Suggestion, SavedTopic } from './types';
+import type {
+  SearchResult,
+  Suggestion,
+  SavedTopic,
+  Team,
+  Competition,
+  Match,
+  StandingRow,
+  HeadlinesResponse,
+  TeamDetail,
+  NewsItem,
+} from './types';
 
 function getApiBaseUrl(): string {
   const envUrl = process.env.EXPO_PUBLIC_API_URL;
@@ -21,6 +32,12 @@ function getApiBaseUrl(): string {
 
 const API_BASE = getApiBaseUrl();
 
+async function fetchJson<T>(path: string): Promise<T> {
+  const response = await fetch(`${API_BASE}${path}`);
+  if (!response.ok) throw new Error(`API error: ${response.status}`);
+  return response.json();
+}
+
 export async function searchNews(query: string, withSummary = true): Promise<SearchResult> {
   const params = new URLSearchParams({
     q: query,
@@ -28,19 +45,54 @@ export async function searchNews(query: string, withSummary = true): Promise<Sea
     country: 'FR',
     ...(withSummary ? { summarize: 'true' } : {}),
   });
-  const response = await fetch(`${API_BASE}/api/search?${params}`);
+  return fetchJson(`/api/search?${params}`);
+}
 
-  if (!response.ok) {
-    throw new Error('Impossible de récupérer les actualités.');
-  }
+export async function getHeadlines(): Promise<HeadlinesResponse> {
+  return fetchJson('/api/headlines?summarize=true');
+}
 
-  return response.json();
+export async function getTeams(): Promise<Team[]> {
+  const data = await fetchJson<{ teams: Team[] }>('/api/teams');
+  return data.teams;
+}
+
+export async function getCompetitions(): Promise<Competition[]> {
+  const data = await fetchJson<{ competitions: Competition[] }>('/api/competitions');
+  return data.competitions;
+}
+
+export async function getMatches(competition?: string, status?: string): Promise<Match[]> {
+  const params = new URLSearchParams();
+  if (competition) params.set('competition', competition);
+  if (status) params.set('status', status);
+  const data = await fetchJson<{ matches: Match[] }>(`/api/matches?${params}`);
+  return data.matches;
+}
+
+export async function getLiveMatches(): Promise<Match[]> {
+  const data = await fetchJson<{ matches: Match[] }>('/api/matches/live');
+  return data.matches;
+}
+
+export async function getStandings(competitionId: string): Promise<StandingRow[]> {
+  const data = await fetchJson<{ standings: StandingRow[] }>(`/api/standings/${competitionId}`);
+  return data.standings;
+}
+
+export async function getTransfers(teamId?: string): Promise<NewsItem[]> {
+  const params = new URLSearchParams({ summarize: 'true' });
+  if (teamId) params.set('team', teamId);
+  const data = await fetchJson<{ articles: NewsItem[] }>(`/api/transfers?${params}`);
+  return data.articles;
+}
+
+export async function getTeamDetail(teamId: string): Promise<TeamDetail> {
+  return fetchJson(`/api/teams/${teamId}`);
 }
 
 export async function getSuggestions(): Promise<Suggestion[]> {
-  const response = await fetch(`${API_BASE}/api/suggestions`);
-  if (!response.ok) return [];
-  const data = await response.json();
+  const data = await fetchJson<{ suggestions: Suggestion[] }>('/api/suggestions');
   return data.suggestions || [];
 }
 

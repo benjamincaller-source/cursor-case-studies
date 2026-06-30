@@ -1,109 +1,63 @@
-# News Pulse
+# Pulse Foot
 
-Application mobile d'agrégation d'actualités multi-sources : recherche par sujet, flux unifié web + X (Twitter), résumés IA et notifications push.
+Application mobile de football inspirée de **Foot Mercato** et **OneFootball** : scores en direct, classements, mercato, actualités par équipe avec résumés IA et notifications push.
+
+## Fonctionnalités
+
+| Onglet | Contenu |
+|--------|---------|
+| **Accueil** | Matchs en direct, équipes populaires, classement Ligue 1, à la une |
+| **Matchs** | Tous les matchs par compétition (Ligue 1, Premier League, La Liga, UCL…) |
+| **Mercato** | Transferts, rumeurs et officiels avec résumés IA |
+| **Favoris** | Suivre vos équipes (PSG, OM, Real, Arsenal…) + alertes push |
 
 ## Architecture
 
 ```
 news-pulse/
-├── backend/     # API Express — agrège sources, résumés IA, push
-└── mobile/      # App Expo (React Native) — iOS, Android, Web
+├── backend/     # API Express — matchs, classements, actus, push
+└── mobile/      # App Expo — navigation par onglets
 ```
 
-## Fonctionnalités
-
-- Barre de recherche pour n'importe quel sujet (ex. « Cursor AI », « PSG football »)
-- Agrégation d'articles depuis **Google News** (gratuit, sans clé)
-- Enrichissement optionnel via **NewsAPI** et **X / Twitter**
-- **Résumés IA** de chaque article (OpenAI ou résumé local)
-- **Notifications push** quand un nouvel article est publié sur un sujet suivi
-- Suivi de sujets favoris avec alertes par sujet (🔔/🔕)
-- Filtres : Tout / Articles / Posts X
-- Pull-to-refresh sur chaque flux
-
-## Démarrage rapide
-
-### 1. Backend
+## Démarrage
 
 ```bash
-cd news-pulse/backend
-cp .env.example .env
-npm install
-npm start
+# Backend
+cd news-pulse/backend && npm install && npm start
+
+# Mobile
+cd news-pulse/mobile && npm install --legacy-peer-deps && npm start
 ```
 
-L'API démarre sur `http://localhost:3001`.
-
-Endpoints principaux :
-- `GET /health` — état des sources
-- `GET /api/search?q=PSG&summarize=true` — recherche avec résumés IA
-- `POST /api/summarize` — résumés IA en batch
-- `POST /api/push/register` — enregistrer un token Expo Push
-- `GET /api/suggestions` — sujets suggérés
-
-### 2. Configuration des clés API (optionnel)
-
-Éditez `backend/.env` :
+## Configuration (`backend/.env`)
 
 ```env
-NEWS_API_KEY=votre_cle_newsapi
-X_BEARER_TOKEN=votre_bearer_token_x
-OPENAI_API_KEY=votre_cle_openai
+OPENAI_API_KEY=       # Résumés IA (optionnel)
+FOOTBALL_DATA_API_KEY= # Matchs réels via football-data.org (optionnel)
+NEWS_API_KEY=          # Articles supplémentaires
+X_BEARER_TOKEN=        # Posts X/Twitter
 POLL_INTERVAL_MS=900000
 ```
 
-| Clé | Effet |
-|-----|-------|
-| `NEWS_API_KEY` | Articles supplémentaires via NewsAPI |
-| `X_BEARER_TOKEN` | Posts X/Twitter dans les résultats |
-| `OPENAI_API_KEY` | Résumés IA via GPT-4o-mini (sinon résumé local) |
-| `POLL_INTERVAL_MS` | Intervalle de vérification push (défaut : 15 min) |
+Sans clés API, l'app fonctionne avec des **données de démonstration** réalistes (scores live, mercato, classements).
 
-### 3. Application mobile
+## Écrans
+
+- **Page équipe** — matchs, classement, actualités filtrées
+- **Scores live** — indicateur minute par minute
+- **Classements** — position, points, forme récente (V/N/D)
+- **Push** — alertes pour nouveaux articles sur vos équipes favorites
+
+## Stack
+
+- Expo 56 + React Native + TypeScript + Expo Router (tabs)
+- Node.js + Express
+- Google News, NewsAPI, X API, OpenAI, Expo Push
+
+## Publication
+
+Pour déployer sur App Store / Play Store :
 
 ```bash
-cd news-pulse/mobile
-npm install --legacy-peer-deps
-npm start
+cd mobile && npx eas init && eas build
 ```
-
-Scannez le QR code avec **Expo Go** (iOS/Android).
-
-**Connexion au backend depuis un téléphone physique :**
-
-```bash
-EXPO_PUBLIC_API_URL=http://VOTRE_IP_LOCALE:3001 npm start
-```
-
-### 4. Notifications push
-
-1. Activez le switch « Alertes nouveaux articles » sur l'écran d'accueil
-2. Ajoutez des sujets à suivre
-3. Le backend vérifie périodiquement les nouveaux articles et envoie une push via [Expo Push](https://docs.expo.dev/push-notifications/overview/)
-
-> Les push nécessitent un **appareil physique** (pas le simulateur). Pour la production, configurez un projet EAS avec `eas init`.
-
-## Exemples de recherche
-
-| Sujet | Requête suggérée |
-|-------|------------------|
-| Société Cursor | `Cursor AI éditeur code` |
-| PSG | `PSG football` |
-| IA | `intelligence artificielle` |
-
-## Stack technique
-
-| Couche | Technologie |
-|--------|-------------|
-| Mobile | Expo 56, React Native, TypeScript, Expo Router, expo-notifications |
-| Backend | Node.js, Express, rss-parser |
-| IA | OpenAI GPT-4o-mini (optionnel) |
-| Push | Expo Push API |
-| Sources | Google News RSS, NewsAPI, X API v2 |
-| Stockage | AsyncStorage (mobile), JSON files (backend) |
-
-## Prochaines étapes possibles
-
-- Authentification utilisateur et sync cloud des sujets
-- Mode hors-ligne avec cache
-- Publication sur App Store / Play Store via EAS Build

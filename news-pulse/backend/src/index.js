@@ -10,6 +10,14 @@ const {
   getAllSubscriptions,
 } = require('./services/pushStore');
 const { startNotificationPoller, pollAllTopics } = require('./services/notificationPoller');
+const { getAllTeams: getCatalogTeams, getAllCompetitions } = require('./services/footballCatalog');
+const {
+  getMatches,
+  getLiveMatches,
+  getStandings,
+  getTeamDetail,
+} = require('./services/footballData');
+const { getTransferNews, getFootballHeadlines } = require('./services/footballNews');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -128,18 +136,87 @@ app.post('/api/push/check', async (_req, res) => {
 
 app.get('/api/suggestions', (_req, res) => {
   res.json({
-    suggestions: [
-      { query: 'Cursor AI éditeur code', label: 'Cursor (société)', emoji: '💻' },
-      { query: 'PSG football', label: 'PSG', emoji: '⚽' },
-      { query: 'intelligence artificielle', label: 'IA', emoji: '🤖' },
-      { query: 'Ligue des Champions', label: 'Champions League', emoji: '🏆' },
-      { query: 'startup française', label: 'Startups FR', emoji: '🚀' },
-    ],
+    suggestions: getCatalogTeams().map((t) => ({
+      query: t.searchQuery,
+      label: t.shortName,
+      emoji: t.emoji,
+      teamId: t.id,
+    })),
   });
 });
 
+app.get('/api/teams', (_req, res) => {
+  res.json({ teams: getCatalogTeams() });
+});
+
+app.get('/api/competitions', (_req, res) => {
+  res.json({ competitions: getAllCompetitions() });
+});
+
+app.get('/api/matches', (req, res) => {
+  const { competition, status, team } = req.query;
+  const matches = getMatches({
+    competitionId: competition,
+    status: status?.toUpperCase(),
+    teamId: team,
+  });
+  res.json({ matches, live: matches.filter((m) => m.status === 'LIVE').length });
+});
+
+app.get('/api/matches/live', (_req, res) => {
+  res.json({ matches: getLiveMatches() });
+});
+
+app.get('/api/standings/:competitionId', (req, res) => {
+  const competitionId = req.params.competitionId || 'ligue1';
+  res.json({ competitionId, standings: getStandings(competitionId) });
+});
+
+app.get('/api/teams/:teamId', (req, res) => {
+  const detail = getTeamDetail(req.params.teamId);
+  if (!detail) return res.status(404).json({ error: 'Équipe introuvable.' });
+  res.json(detail);
+});
+
+app.get('/api/transfers', async (req, res) => {
+  const teamId = req.query.team;
+  const withSummary = req.query.summarize === 'true';
+
+  let articles = getTransferNews(teamId);
+
+  if (withSummary) {
+    const needsSummary = articles.filter((a) => !a.aiSummary);
+    const summaries = await summarizeArticles(needsSummary);
+    const summaryMap = Object.fromEntries(summaries.map((s) => [s.id, s.summary]));
+    articles = articles.map((a) => ({
+      ...a,
+      aiSummary: a.aiSummary || summaryMap[a.id] || null,
+    }));
+  }
+
+  res.json({ articles, total: articles.length });
+});
+
+app.get('/api/headlines', async (req, res) => {
+  const withSummary = req.query.summarize !== 'false';
+  let articles = getFootballHeadlines();
+
+  if (withSummary) {
+    const needsSummary = articles.filter((a) => !a.aiSummary);
+    const summaries = await summarizeArticles(needsSummary);
+    const summaryMap = Object.fromEntries(summaries.map((s) => [s.id, s.summary]));
+    articles = articles.map((a) => ({
+      ...a,
+      aiSummary: a.aiSummary || summaryMap[a.id] || null,
+    }));
+  }
+
+  const liveMatches = getLiveMatches();
+  res.json({ articles, liveMatches, total: articles.length });
+});
+
 app.listen(PORT, () => {
-  console.log(`News Pulse API → http://localhost:${PORT}`);
+  console.log(`Pulse Foot API → http://localhost:${PORT}`);
   console.log(
     `Sources: Google News${process.env.NEWS_API_KEY ? ', NewsAPI' : ''}${process.env.X_BEARER_TOKEN ? ', X' : ''}${process.env.OPENAI_API_KEY ? ', OpenAI' : ''}`,
   );

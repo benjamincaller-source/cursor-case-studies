@@ -1,8 +1,46 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { SavedTopic } from './types';
+import type { SavedTeam, SavedTopic } from './types';
 
-const TOPICS_KEY = '@news_pulse_topics';
-const PUSH_TOKEN_KEY = '@news_pulse_push_token';
+const TEAMS_KEY = '@pulse_foot_teams';
+const TOPICS_KEY = '@pulse_foot_topics';
+const PUSH_TOKEN_KEY = '@pulse_foot_push_token';
+
+export async function getFavoriteTeams(): Promise<SavedTeam[]> {
+  try {
+    const raw = await AsyncStorage.getItem(TEAMS_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+export async function saveFavoriteTeam(teamId: string): Promise<SavedTeam[]> {
+  const teams = await getFavoriteTeams();
+  if (teams.some((t) => t.teamId === teamId)) return teams;
+
+  const updated = [
+    { teamId, addedAt: new Date().toISOString(), notificationsEnabled: true },
+    ...teams,
+  ];
+  await AsyncStorage.setItem(TEAMS_KEY, JSON.stringify(updated));
+  return updated;
+}
+
+export async function removeFavoriteTeam(teamId: string): Promise<SavedTeam[]> {
+  const teams = await getFavoriteTeams();
+  const updated = teams.filter((t) => t.teamId !== teamId);
+  await AsyncStorage.setItem(TEAMS_KEY, JSON.stringify(updated));
+  return updated;
+}
+
+export async function toggleTeamNotifications(teamId: string): Promise<SavedTeam[]> {
+  const teams = await getFavoriteTeams();
+  const updated = teams.map((t) =>
+    t.teamId === teamId ? { ...t, notificationsEnabled: !t.notificationsEnabled } : t,
+  );
+  await AsyncStorage.setItem(TEAMS_KEY, JSON.stringify(updated));
+  return updated;
+}
 
 export async function getSavedTopics(): Promise<SavedTopic[]> {
   try {
@@ -17,36 +55,23 @@ export async function saveTopics(topics: SavedTopic[]): Promise<void> {
   await AsyncStorage.setItem(TOPICS_KEY, JSON.stringify(topics));
 }
 
-export async function saveTopic(topic: SavedTopic): Promise<SavedTopic[]> {
-  const topics = await getSavedTopics();
-  const exists = topics.some((t) => t.query.toLowerCase() === topic.query.toLowerCase());
-  if (exists) return topics;
-
-  const newTopic: SavedTopic = {
-    ...topic,
-    notificationsEnabled: topic.notificationsEnabled ?? true,
-  };
-  const updated = [newTopic, ...topics];
-  await saveTopics(updated);
-  return updated;
-}
-
-export async function removeTopic(query: string): Promise<SavedTopic[]> {
-  const topics = await getSavedTopics();
-  const updated = topics.filter((t) => t.query.toLowerCase() !== query.toLowerCase());
-  await saveTopics(updated);
-  return updated;
-}
-
-export async function toggleTopicNotifications(query: string): Promise<SavedTopic[]> {
-  const topics = await getSavedTopics();
-  const updated = topics.map((t) =>
-    t.query.toLowerCase() === query.toLowerCase()
-      ? { ...t, notificationsEnabled: !t.notificationsEnabled }
-      : t,
-  );
-  await saveTopics(updated);
-  return updated;
+export async function syncTopicsFromTeams(
+  teams: { teamId: string; searchQuery: string; shortName: string; emoji: string }[],
+  favorites: SavedTeam[],
+): Promise<SavedTopic[]> {
+  const topics: SavedTopic[] = teams.map((team) => {
+    const fav = favorites.find((f) => f.teamId === team.teamId);
+    return {
+      query: team.searchQuery,
+      label: team.shortName,
+      emoji: team.emoji,
+      teamId: team.teamId,
+      addedAt: fav?.addedAt || new Date().toISOString(),
+      notificationsEnabled: fav?.notificationsEnabled ?? true,
+    };
+  });
+  await saveTopics(topics);
+  return topics;
 }
 
 export async function getStoredPushToken(): Promise<string | null> {
