@@ -1,0 +1,47 @@
+export default {
+  expo: {
+    name: 'Pulse Foot',
+    slug: 'pulse-foot',
+    version: '1.1.0',
+    orientation: 'portrait',
+    icon: './assets/icon.png',
+    userInterfaceStyle: 'dark',
+    scheme: 'newspulse',
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: 'com.newspulse.app',
+      infoPlist: {
+        UIBackgroundModes: ['remote-notification'],
+      },
+    },
+    android: {
+      adaptiveIcon: {
+        backgroundColor: '#0A0A0F',
+        foregroundImage: './assets/android-icon-foreground.png',
+        backgroundImage: './assets/android-icon-background.png',
+        monochromeImage: './assets/android-icon-monochrome.png',
+      },
+      package: 'com.newspulse.app',
+      permissions: ['RECEIVE_BOOT_COMPLETED', 'VIBRATE'],
+    },
+    web: {
+      favicon: './assets/favicon.png',
+      bundler: 'metro',
+      output: 'single',
+    },
+    experiments: {
+      baseUrl: './',
+    },
+    plugins: [
+      'expo-router',
+      [
+        'expo-notifications',
+        {
+          icon: './assets/icon.png',
+          color: '#00E676',
+          defaultChannel: 'news',
+        },
+      ],
+    ],
+  },
+};

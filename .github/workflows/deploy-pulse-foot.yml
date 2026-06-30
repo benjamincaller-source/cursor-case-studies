@@ -43,6 +43,7 @@ jobs:
           cp -r news-pulse/mobile/dist/* _site/
           cp -r news-pulse/mobile/public/demo-api _site/demo-api
           touch _site/.nojekyll
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=index.html"><title>Pulse Foot</title></head><body><a href="index.html">Pulse Foot</a></body></html>' > _site/404.html
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4

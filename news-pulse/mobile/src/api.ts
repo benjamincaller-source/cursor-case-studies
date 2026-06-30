@@ -14,16 +14,21 @@ import type {
 } from './types';
 
 const GITHUB_PAGES_BASE = '/cursor-case-studies';
-const DEMO_API = `${GITHUB_PAGES_BASE}/demo-api`;
 
-function isGitHubPages(): boolean {
+function isStaticHosting(): boolean {
   if (typeof window === 'undefined') return false;
-  return window.location.hostname.includes('github.io');
+  const h = window.location.hostname;
+  return (
+    h.includes('github.io') ||
+    h.includes('githack.com') ||
+    h.includes('jsdelivr.net')
+  );
 }
 
-function getBasePath(): string {
-  if (isGitHubPages()) return GITHUB_PAGES_BASE;
-  return '';
+function getDemoApiBase(): string {
+  if (typeof window === 'undefined') return `${GITHUB_PAGES_BASE}/demo-api`;
+  const path = window.location.pathname.replace(/\/?index\.html$/, '').replace(/\/$/, '');
+  return `${path}/demo-api`;
 }
 
 function getApiBaseUrl(): string {
@@ -32,7 +37,7 @@ function getApiBaseUrl(): string {
     return envUrl.replace(/\/$/, '');
   }
 
-  if (isGitHubPages()) {
+  if (isStaticHosting()) {
     return '';
   }
 
@@ -56,13 +61,13 @@ function getApiBaseUrl(): string {
 const API_BASE = getApiBaseUrl();
 
 async function fetchDemoJson<T>(file: string): Promise<T> {
-  const response = await fetch(`${DEMO_API}/${file}`);
+  const response = await fetch(`${getDemoApiBase()}/${file}`);
   if (!response.ok) throw new Error(`Demo API error: ${response.status}`);
   return response.json();
 }
 
 async function fetchJson<T>(path: string): Promise<T> {
-  if (isGitHubPages()) {
+  if (isStaticHosting()) {
     return fetchDemoForPath<T>(path);
   }
 
@@ -164,11 +169,11 @@ export async function getSuggestions(): Promise<Suggestion[]> {
 
 export async function checkHealth(): Promise<boolean> {
   try {
-    if (isGitHubPages()) return true;
+    if (isStaticHosting()) return true;
     const response = await fetch(`${API_BASE}/health`, { signal: AbortSignal.timeout(5000) });
     return response.ok;
   } catch {
-    return isGitHubPages();
+    return isStaticHosting();
   }
 }
 
@@ -176,7 +181,7 @@ export async function registerPushToken(
   token: string,
   topics: SavedTopic[],
 ): Promise<boolean> {
-  if (isGitHubPages()) return false;
+  if (isStaticHosting()) return false;
   const notifTopics = topics.filter((t) => t.notificationsEnabled !== false);
   const response = await fetch(`${API_BASE}/api/push/register`, {
     method: 'POST',
@@ -194,7 +199,7 @@ export async function registerPushToken(
 }
 
 export async function unregisterPushToken(token: string): Promise<boolean> {
-  if (isGitHubPages()) return false;
+  if (isStaticHosting()) return false;
   const response = await fetch(`${API_BASE}/api/push/register`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
@@ -203,4 +208,4 @@ export async function unregisterPushToken(token: string): Promise<boolean> {
   return response.ok;
 }
 
-export { API_BASE, getBasePath };
+export { API_BASE };
